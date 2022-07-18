@@ -8,9 +8,9 @@ const Navbar = () => {
             <img src={logoRaw}></img>
         </div>
         <div>
-            <button>loguin</button>
-            <button>Logout</button>
-            <button>cart</button>
+            <button className="btn-loguin">loguin</button>
+            <button className="btn-logout">Logout</button>
+            <button className="btn-cart">cart</button>
         </div>
        </nav> 
     )
