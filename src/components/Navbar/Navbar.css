@@ -1,11 +1,16 @@
 .header {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 10px;
-    margin-left: 35px;
-    margin-right: 60px;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+.navbar {
+    display: flex;
+    flex-direction: row;
+}
+.img {
+    height: 200px;
 }
 .btn-login{
     padding: 10px 10px;

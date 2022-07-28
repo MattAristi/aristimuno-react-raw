@@ -1,14 +1,14 @@
 import './Navbar.css'
-import logoRaw from './imagenesraw/logoblack.jpg'
+// import logoRaw from './imagenesraw/logoblack.jpg'
 
 const Navbar = () => {
     return (
-       <nav>
+       <nav className='header'>
         <div>
-            <img src={logoRaw} alt={"logoRaw"}></img>
+            <img className='img' src='./imagenesraw/logoblack.jpg' alt={"logoRaw"}></img>
         </div>
-        <div>
-            <button className="btn-loguin">loguin</button>
+        <div className='navbar'>
+            <button className="btn-login">loguin</button>
             <button className="btn-logout">Logout</button>
             <button className="btn-cart">cart</button>
         </div>
