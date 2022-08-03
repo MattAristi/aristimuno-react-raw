@@ -1,6 +1,5 @@
 import './Navbar.css'
-// import logoRaw from './imagenesraw/logoblack.jpg'
-
+import CartWitget from '../CartWitget/CartWitget';
 const Navbar = () => {
     return (
        <nav className='header'>
@@ -10,10 +9,11 @@ const Navbar = () => {
         <div className='navbar'>
             <button className="btn-login">loguin</button>
             <button className="btn-logout">Logout</button>
-            <button className="btn-cart">cart</button>
+            <button className="btn-cart"><CartWitget/>10</button>
+            
         </div>
        </nav> 
-    )
+    );
 }
 
 export default Navbar;
