@@ -1,0 +1,19 @@
+.counter{
+    display: flex;
+    flex-direction: row;
+}
+.btn-count{
+    padding: 0px 20px;
+    margin-top: 10px;
+    width: 100%;
+    font-size: 18px;
+    background-color:rgba(0, 0, 0, 0.323) ;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;  
+}
+.qantity{
+    padding: 0px 20px;
+}
