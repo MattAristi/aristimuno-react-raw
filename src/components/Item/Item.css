@@ -1,0 +1,11 @@
+.img-product{
+    width: 200px;
+    height: auto;
+}
+
+.item {
+    background-color: rgba(0, 0, 0, 0.309);
+    max-width: 200px;
+    padding: 20rem;
+    margin-top: 20px;
+}

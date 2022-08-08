@@ -1,0 +1,18 @@
+.img-product{
+    width: 200px;
+    height: auto;
+}
+
+.card-list{
+    display: flex;
+    flex-flow: wrap;
+    max-width: 100%;
+    justify-content: space-around;
+    align-content: center;
+    
+}
+.item {
+    background-color: rgba(0, 0, 0, 0.309);
+    border-radius: 5px;
+    margin-top: 10px;
+}

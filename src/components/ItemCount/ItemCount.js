@@ -12,13 +12,16 @@ const ItemCount = ({stock,initial,onAdd}) => {
         if (count< stock)
         setCount(count +1)
     }
+    // const zero = () => {
+    //     setCount(count=0)
+    // }
     return(
         <div>
-        <div className='counter'>
-            <button className="btn-count" onClick={decrement}>-</button>
-            <p className='qantity'>{count}</p>
-            <button className="btn-count" onClick={increment}>+</button>
-        </div>
+            <div className='counter'>
+                <button className="btn-count" onClick={decrement}>-</button>
+                <p className='qantity'>{count}</p>
+                <button className="btn-count" onClick={increment}>+</button>
+            </div>
             <button onClick={() => onAdd (count, stock)} className="btn-count">Add to cart</button>
         </div>
     )
