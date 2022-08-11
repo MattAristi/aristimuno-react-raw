@@ -1,3 +1,4 @@
+import './ItemDetailContainer.css'
 import { getProduct } from "../../AsyncMock"
 import { useEffect, useState } from "react"
 import ItemCount from '../ItemCount/ItemCount'
@@ -23,7 +24,7 @@ const ItemDetailContainer =() => {
     }
     
     return (
-        <>
+        <section className='section-detail'>
             <h1>Detail</h1>
             <div className="detail-card">
                 <div className="detail-left">
@@ -37,7 +38,7 @@ const ItemDetailContainer =() => {
                     <ItemCount stock={product.stock} initial={0} onAdd={addQuantity} />                
                 </div>   
             </div>
-        </>
+        </section>
     )}
 
 export default ItemDetailContainer

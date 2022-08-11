@@ -1,4 +1,4 @@
-
+ import './Item.css'
 
 const Item = ({product}) =>{
     
@@ -7,7 +7,7 @@ const Item = ({product}) =>{
                 <h1>{product.category}</h1>
                 <h2>{product.name}</h2>
                 <img className="img-product" src={product.img} alt={product.name}></img>
-                <h3>{product.stock} unidades en stock</h3>               
+                <h2>${product.price}</h2>                
             </div>
 }
 

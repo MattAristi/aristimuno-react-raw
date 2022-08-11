@@ -1,4 +1,18 @@
 .detail-card{
+    background-color: rgba(0, 0, 0, 0.289);
     display: flex;
     flex-direction: row;
-}
+    justify-content: space-between;
+    align-items: center;
+    max-width: 400px;
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-top: 30px;
+  }
+  .section-detail{
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 30px;
+
+  }
