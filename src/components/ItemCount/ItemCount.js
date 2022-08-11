@@ -12,9 +12,7 @@ const ItemCount = ({stock,initial,onAdd}) => {
         if (count< stock)
         setCount(count +1)
     }
-    // const zero = () => {
-    //     setCount(count=0)
-    // }
+    
     return(
         <div>
             <div className='counter'>
