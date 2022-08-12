@@ -8,9 +8,9 @@ const Navbar = () => {
             <img className='img' src='./imagenesraw/logoblack.jpg' alt={"logoRaw"}></img>
         </div>
         <div className='navbar'>
-            <Link to='/category/cuadro' className="btn-filter">Cuadros</Link>
-            <Link to='/category/horquilla' className="btn-filter">Horquillas</Link>
-            <Link to='/category/porta' className="btn-filter">Potrtas</Link>
+            <button className="btn-filter"><Link to='/category/cuadro'></Link>Cuadros</button>
+            <button className="btn-filter"><Link to='/category/horquilla' className="btn-filter">Horquillas</Link></button>
+            <button className="btn-filter"><Link to='/category/porta' className="btn-filter">Potrtas</Link></button>
         </div>
         <div>
             <button className="btn-cart"><CartWitget/>10</button>
