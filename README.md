@@ -6,7 +6,6 @@ Para trabajar en la aplicación se incluyeron las siguientes librerias:
 -React Router Dom para generar las rutas de nuestra aplicacion.
 -Node.Js & npm.
 
-Por otro lado creamos un "mapa" de nuestra app creando una carpeta de componentes donde enocntraremos cada uno de nuestros elementos de la app.
 Para tener un orden creamos una carpeta que contiene todos los componentes y cada componente posee una carpeta donde se encuentran, el archivo JS y el CSS respectivamente. 
 -Navbar: Es la barra de navegacion donde podemos encontrar los botones que filtran la busqueda de productos y tambien está el boton que direcciona al carrito..
 -ItemLisContainer : Es el contenedor que muestra todos los productos disponibles.
