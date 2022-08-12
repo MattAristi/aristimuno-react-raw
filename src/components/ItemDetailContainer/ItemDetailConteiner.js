@@ -1,43 +1,31 @@
 import './ItemDetailContainer.css'
 import { getProduct } from "../../AsyncMock"
 import { useEffect, useState } from "react"
-import ItemCount from '../ItemCount/ItemCount'
+import ItemDetail from '../ItemDetail/ItemDetail'
+import { useParams } from 'react-router-dom'
 
 const ItemDetailContainer =() => {
-    const [product, setProducts]= useState([])
+    const [product, setProduct]= useState([])
     const [loading, setLoading]= useState(true)
+    const params = useParams()
     useEffect(() => {
-        getProduct().then(response => {
-            setProducts(response)
-        }).catch(error => {
+        getProduct(params.productId).then(response => {
+            setProduct(response)
+        })
+        .catch(error => {
             console.log(error);
         }).finally(() => {
             setLoading(false)
         })
-    }, [])
+    }, [params.productId])
     if (loading) {
         return <h1>Loading....</h1>
-    }
-    const addQuantity = (quantity,stock) =>{
-        if (quantity<=stock)
-        console.log('Total',quantity);
     }
     
     return (
         <section className='section-detail'>
             <h1>Detail</h1>
-            <div className="detail-card">
-                <div className="detail-left">
-                    <h1>{product.category}</h1>
-                    <img className="img-product" src={product.img} alt={product.name}></img>
-                </div> 
-                <div className="detail-right">
-                    <h2>{product.name}</h2>              
-                    <h2>${product.price}</h2>
-                    <h3>{product.stock} unidades en stock</h3>
-                    <ItemCount stock={product.stock} initial={0} onAdd={addQuantity} />                
-                </div>   
-            </div>
+            <ItemDetail product={product}/>
         </section>
     )}
 
