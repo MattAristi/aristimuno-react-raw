@@ -1,70 +1,17 @@
-# Getting Started with Create React App
+ Proyecto de un E-commerce de una fabrica de componentes para bicicletas en fase de desarrollo para el curso de react en CoderHouse. Fue creado en React js.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Para crear la aplicacion ha sido instalado, un editor de codigo y Node.js 
+Para trabajar en la aplicación se incluyeron las siguientes librerias:
+-React para la creacion de la app.
+-React Router Dom para generar las rutas de nuestra aplicacion.
+-Node.Js & npm.
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Para tener un orden creamos una carpeta que contiene todos los componentes y cada componente posee una carpeta donde se encuentran, el archivo JS y el CSS respectivamente. 
+-Navbar: Es la barra de navegacion donde podemos encontrar los botones que filtran la busqueda de productos y tambien está el boton que direcciona al carrito..
+-ItemLisContainer : Es el contenedor que muestra todos los productos disponibles.
+-ItemList: Este componente es el que desmenuza el array de objetos (producto) para poder armar cada producto con el siguiente componente 'Item'.
+-Item: Es la card de cada producto que trae todos los datos de ItemList e ItemListContainer.
+-ItemDetailContainer: Este es el componente que define el objeto seleccionado para ampliar detalle. 
+-ItemDetail: Es el card que muestra el detalle del producto seleccionado y desde alli poder agregar el producto y la cantidad seleccionada.
+-ItemCount: Contador que nos permite seleccionar la cantidad que queremos de algun producto.
+-CartWidget : Este es el lugar donde se guardan los datos de cada uno de los productos y su cantidad respectivamente.
