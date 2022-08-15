@@ -8,6 +8,7 @@ const ItemListContainer =({greeting}) => {
     const [products, setProducts]= useState([])
     const [loading, setLoading]= useState(true)
     const params = useParams()
+    
     useEffect(() => {
         if (params.catId){
             getProductsByCategory(params.catId).then(response => {
@@ -29,6 +30,15 @@ const ItemListContainer =({greeting}) => {
         
     },[params.catId])
 
+    useEffect (()=> {
+        const onResize = ()=> {
+            console.log('se cambio el tamaño de pantalla')
+        }
+
+        window.addEventListener('resize',onResize)
+            return ()=> window.removeEventListener('resize', onResize)
+    }, [])
+   
     if (loading) {
         return <h1>Loading....</h1>
     }
