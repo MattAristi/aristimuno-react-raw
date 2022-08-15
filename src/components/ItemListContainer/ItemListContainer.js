@@ -29,16 +29,6 @@ const ItemListContainer =({greeting}) => {
         }
         
     },[params.catId])
-
-    useEffect (()=> {
-        const onResize = ()=> {
-            console.log('se cambio el tamaño de pantalla')
-        }
-
-        window.addEventListener('resize',onResize)
-            return ()=> window.removeEventListener('resize', onResize)
-    }, [])
-   
     if (loading) {
         return <h1>Loading....</h1>
     }
