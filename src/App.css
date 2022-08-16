@@ -5,9 +5,15 @@
   font-family: sans-serif;
 }
 .app {
-  background-image: 'imagenesraw/muelle2.jpg';
+  
+  background-image: url(../public/imagenesraw/muelle2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
   text-align: center;
   align-items: center;
+  height: 150vh;
 }
 
 .App-logo {

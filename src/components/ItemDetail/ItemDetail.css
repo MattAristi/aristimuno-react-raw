@@ -1,6 +1,10 @@
 .detail-right{
     text-decoration: none;
-    color: black;
+    color: rgb(238, 233, 233);
+}
+.detail-left{
+    text-decoration: none;
+    color: rgb(238, 233, 233);
 }
 .ir-al-carrito {
     text-decoration: none;
