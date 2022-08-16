@@ -3,7 +3,11 @@
     justify-content: center;
     max-width: 90%;
     margin: 0 auto;
+    padding-top:40px ;
 }
 .titulo{
 color: rgb(241, 236, 236);
+}
+.loading{
+    color: rgb(246, 242, 242);
 }

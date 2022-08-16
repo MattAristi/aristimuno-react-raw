@@ -4,13 +4,14 @@ import ItemList from "../ItemList/ItemList"
 import './ItemListContainer.css'
 import { useParams } from "react-router-dom"
 
-const ItemListContainer =() => {
+const ItemListContainer =({greeting}) => {
     const [products, setProducts]= useState([])
     const [loading, setLoading]= useState(true)
     const params = useParams()
     
     useEffect(() => {
         if (params.catId){
+            setLoading(true)
             getProductsByCategory(params.catId).then(response => {
                 setProducts(response)
             }).catch(error => {
@@ -19,6 +20,7 @@ const ItemListContainer =() => {
                 setLoading(false)
             })
         } else {
+            setLoading(true)
             getProducts().then(response => {
                 setProducts(response)
             }).catch(error => {
@@ -30,12 +32,12 @@ const ItemListContainer =() => {
         
     },[params.catId])
     if (loading) {
-        return <h1>Loading....</h1>
+        return <h1 className="loading">Loading....</h1>
     }
     
     return (
         <section className="item-list-container">
-            <h1 className="titulo">{params.catId}</h1>
+            <h1 className="titulo">{(params.catId) ? (params.catId):(greeting)}</h1>
             <ItemList products={products}/>
         </section>
     )}
