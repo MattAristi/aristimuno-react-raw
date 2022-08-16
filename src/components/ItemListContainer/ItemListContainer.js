@@ -4,7 +4,7 @@ import ItemList from "../ItemList/ItemList"
 import './ItemListContainer.css'
 import { useParams } from "react-router-dom"
 
-const ItemListContainer =({greeting}) => {
+const ItemListContainer =() => {
     const [products, setProducts]= useState([])
     const [loading, setLoading]= useState(true)
     const params = useParams()
@@ -35,7 +35,7 @@ const ItemListContainer =({greeting}) => {
     
     return (
         <section className="item-list-container">
-            <h1>{greeting}</h1>
+            <h1 className="titulo">{params.catId}</h1>
             <ItemList products={products}/>
         </section>
     )}

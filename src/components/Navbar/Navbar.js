@@ -9,9 +9,9 @@ const Navbar = () => {
         </div>
         <div className='navbar'>
             <button className="btn-filter"><Link to='/' className="btn-filter">Home</Link></button>
-            <button className="btn-filter"><Link to='/category/cuadro' className="btn-filter">Cuadros</Link></button>
-            <button className="btn-filter"><Link to='/category/horquilla' className="btn-filter">Horquillas</Link></button>
-            <button className="btn-filter"><Link to='/category/porta' className="btn-filter">Potrtas</Link></button>
+            <button className="btn-filter"><Link to='/category/Cuadros' className="btn-filter">Cuadros</Link></button>
+            <button className="btn-filter"><Link to='/category/Horquillas' className="btn-filter">Horquillas</Link></button>
+            <button className="btn-filter"><Link to='/category/Portas' className="btn-filter">Potrtas</Link></button>
         </div>
         <div>
             <button className="btn-cart"><CartWitget/>10</button>

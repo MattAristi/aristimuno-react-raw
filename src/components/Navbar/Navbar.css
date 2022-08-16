@@ -5,7 +5,7 @@
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    height: 200px;
+    height: 150px;
 }
 .navbar {
     display: flex;
@@ -13,7 +13,7 @@
     
 }
 .img {
-    height: 200px;
+    height: 150px;
 }
 .btn-filter{
     padding: 10px 10px;
