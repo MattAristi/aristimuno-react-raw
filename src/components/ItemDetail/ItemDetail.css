@@ -1,0 +1,10 @@
+.detail-right{
+    text-decoration: none;
+    color: black;
+}
+.ir-al-carrito {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    background-color: rgba(54, 54, 55, 0.951);
+    border-radius: 5px;
+}
