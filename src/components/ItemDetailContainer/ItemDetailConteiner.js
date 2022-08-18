@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import ItemDetail from '../ItemDetail/ItemDetail'
 import { useParams } from 'react-router-dom'
 
-const ItemDetailContainer =() => {
+const ItemDetailContainer =({addItem}) => {
     const [product, setProduct]= useState([])
     const [loading, setLoading]= useState(true)
     const params = useParams()
@@ -25,7 +25,7 @@ const ItemDetailContainer =() => {
     return (
         <section className='section-detail'>
             <h1>Detail</h1>
-            <ItemDetail product={product}/>
+            <ItemDetail product={product} addItem={addItem}/>
         </section>
     )}
 

@@ -1,15 +1,23 @@
-import { useState } from 'react';
+import { useState, useContext} from 'react';
 import { Link } from 'react-router-dom';
 import ItemCount from '../ItemCount/ItemCount'
 import './ItemDetail.css'
+import { CartContext } from '../../Context/CartContext';
 
 const ItemDetail= ({product}) => {
+    const {addItem, prevQuantity} = useContext(CartContext)
     const [quantity, setQuantity]= useState(0)
+    const prevQ = prevQuantity(product.id)
     const addQuantity = (quantity,stock) =>{
-        if (quantity<=stock)
-        console.log('Total',quantity);
+        if (quantity<=stock){
+            console.log('Total',quantity);
         setQuantity(quantity)
-    }
+        const cartProduct={...product, quantity}
+        {quantity > 0 ? addItem(cartProduct): <ItemCount stock={product.stock} initial={prevQ} onAdd={addQuantity} />}
+        }
+        
+        }
+    
     
     return (        
             <div className="detail-card">
@@ -21,7 +29,7 @@ const ItemDetail= ({product}) => {
                     <h2>{product.name}</h2>              
                     <h2>${product.price}</h2>
                     <h3>{product.stock} unidades en stock</h3>
-                    { quantity > 0 ? <Link className="detail-right" to='/cart'><p className="detail-right">{`Agregaste ${quantity} unidades`}</p><button className="ir-al-carrito" >Ir al carrito</button></Link> : <ItemCount stock={product.stock} initial={0} onAdd={addQuantity} />}               
+                    { quantity > 0 ? <Link className="detail-right" to='/cart'><p className="detail-right">{`Agregaste ${quantity} unidades`}</p><button className="ir-al-carrito" >Ir al carrito</button></Link> : <ItemCount stock={product.stock} initial={prevQ} onAdd={addQuantity} />}               
                 </div>   
             </div>
     )
