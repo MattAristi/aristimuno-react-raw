@@ -52,10 +52,22 @@
     outline: none;
     text-decoration: none;  
 }
+.link-cart{
+    width: 100%;
+    font-size: 14px;
+    background-color:rgba(0, 0, 0, 0) ;
+    color: white;    
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;  
+}
 @media screen and (max-width:790px){
     .header{
         flex-direction: column;
         align-items: center;
         justify-items: center;
     }
+}
+.no_number{
+display: none;
 }

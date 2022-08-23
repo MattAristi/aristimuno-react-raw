@@ -34,6 +34,7 @@ export const CContextProvider = ({children})=>{
             }
             
         }
+        const getTotal = () => cart.reduce((total, prod) => (total += prod.quantity * prod.price), 0);
 
         const isInCart = (id) => {
             return cart.some(prod => prod.id === id)
@@ -54,7 +55,7 @@ export const CContextProvider = ({children})=>{
         }
 
     return (
-        <CartContext.Provider value={{cart, addItem, isInCart, removeItem, clearCart, getQuantityWidget, prevQuantity}}>
+        <CartContext.Provider value={{cart, addItem, isInCart, removeItem, clearCart, getQuantityWidget, prevQuantity, getTotal}}>
             {children}
         </CartContext.Provider> 
     )

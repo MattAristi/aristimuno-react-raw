@@ -3,20 +3,24 @@ import { Link } from 'react-router-dom';
 import ItemCount from '../ItemCount/ItemCount'
 import './ItemDetail.css'
 import { CartContext } from '../../Context/CartContext';
+import NotificationContext from '../../Notification/Notification';
 
 const ItemDetail= ({product}) => {
     const {addItem, prevQuantity} = useContext(CartContext)
     const [quantity, setQuantity]= useState(0)
+    const {setNotification}=  useContext(NotificationContext)
     const prevQ = prevQuantity(product.id)
     const addQuantity = (quantity,stock) =>{
         if (quantity<=stock){
             console.log('Total',quantity);
+            setNotification('succes', `Se agregaron ${quantity} ${product.category} ${product.name}`)
         setQuantity(quantity)
         const cartProduct={...product, quantity}
         {quantity > 0 ? addItem(cartProduct): <ItemCount stock={product.stock} initial={prevQ} onAdd={addQuantity} />}
         }
         
         }
+
     
     
     return (        

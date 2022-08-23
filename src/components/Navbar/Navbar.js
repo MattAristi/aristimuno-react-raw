@@ -6,6 +6,8 @@ import { useContext } from 'react';
 const Navbar = () => {
     const {getQuantityWidget}= useContext(CartContext)
     const qWitget = getQuantityWidget()
+    
+    
     return (
         <nav className='header'>
             <div>
@@ -18,7 +20,7 @@ const Navbar = () => {
                 <button className="btn-filter"><Link to='/category/Portas' className="btn-filter">Potrtas</Link></button>
             </div>
             <div>
-                <button className="btn-cart"><CartWitget/>{qWitget}</button>
+                <button className={`${qWitget === 0 ? 'no_number' : 'btn-cart'}`}><Link className="link-cart" to='/cart'><CartWitget/>{qWitget}</Link></button>
             </div>
         </nav> 
     );

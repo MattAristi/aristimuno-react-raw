@@ -1,0 +1,38 @@
+.card-cart {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    text-decoration: none;
+}
+.text-card {
+    color: beige;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    text-decoration: none;
+    
+    margin-top: 10px;
+    width: 100%;
+    font-size: 14px;
+    background-color:rgba(0, 0, 0, 0.323) ;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;  
+}
+.button_cart{
+    padding: 10px 10px;
+    margin-top: 10px;
+    width: 100%;
+    font-size: 14px;
+    background-color:rgba(0, 0, 0, 0.323) ;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;  
+}
+.text-desc-cart {
+    padding: 10px 10px;
+}
