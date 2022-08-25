@@ -16,7 +16,7 @@ const ItemDetail= ({product}) => {
             setNotification('succes', `Se agregaron ${quantity} ${product.category} ${product.name}`)
         setQuantity(quantity)
         const cartProduct={...product, quantity}
-        {quantity > 0 ? addItem(cartProduct): <ItemCount stock={product.stock} initial={prevQ} onAdd={addQuantity} />}
+        {(quantity > 0) ? addItem(cartProduct): <ItemCount stock={product.stock} initial={prevQ} onAdd={addQuantity} />}
         }
         
         }
