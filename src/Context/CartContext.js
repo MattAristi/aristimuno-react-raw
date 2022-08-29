@@ -22,8 +22,6 @@ export const CContextProvider = ({children})=>{
             setCart(cartUpdated)
         }
     }
-        console.log(cart);
-        
 
         const prevQuantity = (id) => {
             const product = cart.find(prod => prod.id === id)

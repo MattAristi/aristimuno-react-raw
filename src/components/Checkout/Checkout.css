@@ -1,0 +1,16 @@
+.form-checkout{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+}
+.form{
+    padding: 5px;
+    margin-top: 5px;
+}
+.label-input{
+    margin-top: 20px;
+}
+.btn-order{
+    margin-top: 10px;
+}

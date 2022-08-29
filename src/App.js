@@ -6,6 +6,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import {CContextProvider} from './Context/CartContext'
 import {NotificationProvider} from './Notification/Notification'
 import CartContainer from './components/CartContainer/CartContainer';
+import Checkout from './components/Checkout/Checkout'
 
 function App() {
  
@@ -21,7 +22,7 @@ function App() {
             <Route path='/category/:catId' element={<ItemListContainer/>}/> 
             <Route path='/detail/:prodId' element={<ItemDetailContainer />}/>
             <Route path='/cart' element={<CartContainer/>}/>
-            <Route path="/orderdata" element={'orden de compra'}/>
+            <Route path="/orderdata" element={<Checkout/>}/>
           </Routes>          
         </BrowserRouter>
       </CContextProvider>

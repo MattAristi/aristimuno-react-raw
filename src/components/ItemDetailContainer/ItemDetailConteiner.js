@@ -14,20 +14,11 @@ const ItemDetailContainer =({addItem}) => {
             const values = response.data()
             const product = {id : response.id, ...values}
             setProduct(product)
-            console.log(product);
         }).catch(error => {
             console.error(error)
             }).finally (()=>{
                 setLoading(false)
             })
-        // getProduct(params.productId).then(response => {
-        //     setProduct(response)
-        // })
-        // .catch(error => {
-        //     console.log(error);
-        // }).finally(() => {
-        //     setLoading(false)
-        // })
     }, [prodId])
     if (loading) {
         return <h1>Loading....</h1>

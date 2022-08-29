@@ -18,10 +18,8 @@ const ItemListContainer =({greeting}) => {
             ? collection(db, 'products')
             : query(collection(db, 'products'), where('category', '==', catId ))
                 getDocs(collectionRef).then(response => {
-                    console.log(response)
                     const products = response.docs.map(doc=> {
                         const value = doc.data()
-                            console.log(value);
                         return{id : doc.id, ...value}   
                     })
                     setProducts(products);

@@ -12,7 +12,6 @@ const ItemDetail= ({product}) => {
     const prevQ = prevQuantity(product.id)
     const addQuantity = (quantity,stock) =>{
         if (quantity<=stock){
-            console.log('Total',quantity);
             setNotification('succes', `Se agregaron ${quantity} ${product.category} ${product.name}`)
         setQuantity(quantity)
         const cartProduct={...product, quantity}
