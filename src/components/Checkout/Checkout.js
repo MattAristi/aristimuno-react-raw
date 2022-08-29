@@ -18,8 +18,8 @@ const Checkout = () => {
         const objectOrder = {
             buyer: {
                 name:name,
-                phone:'phone',
-                email:'email'
+                phone:phone,
+                email:email
             },
             items: cart,
             total: total,
