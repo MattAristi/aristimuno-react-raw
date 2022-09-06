@@ -1,10 +1,10 @@
-// import { getProducts, getProductsByCategory } from "../../AsyncMock"
-import { useEffect, useState } from "react"
-import ItemList from "../ItemList/ItemList"
 import './ItemListContainer.css'
+
+import { useEffect, useState } from "react"
+
+import ItemList from "../ItemList/ItemList"
+import {getProducts} from '../../Services/firebase/firestore'
 import { useParams } from "react-router-dom"
-import {getDocs, collection, query, where} from 'firebase/firestore'
-import{db} from '../../Services/firebase/index'
 
 const ItemListContainer =({greeting}) => {
     const [products, setProducts]= useState([])
@@ -14,20 +14,28 @@ const ItemListContainer =({greeting}) => {
     
     useEffect(() => {
             setLoading(true)
-            const collectionRef = !catId 
-            ? collection(db, 'products')
-            : query(collection(db, 'products'), where('category', '==', catId ))
-                getDocs(collectionRef).then(response => {
-                    const products = response.docs.map(doc=> {
-                        const value = doc.data()
-                        return{id : doc.id, ...value}   
-                    })
-                    setProducts(products);
-                }).catch(error=> {
-                    console.log(error)
-                }).finally(()=> {
-                    setLoading(false)
-                })
+
+            getProducts (catId).then(products => {
+                setProducts(products)
+            }).catch(error => {
+                console.log(error)
+            }).finally(() => {
+                setLoading(false)
+            })
+            // const collectionRef = !catId 
+            // ? collection(db, 'products')
+            // : query(collection(db, 'products'), where('category', '==', catId ))
+            //     getDocs(collectionRef).then(response => {
+            //         const products = response.docs.map(doc=> {
+            //             const value = doc.data()
+            //             return{id : doc.id, ...value}   
+            //         })
+            //         setProducts(products);
+            //     }).catch(error=> {
+            //         console.log(error)
+            //     }).finally(()=> {
+            //         setLoading(false)
+            //     })
     },[catId])
     if (loading) {
         return <h1 className="loading">Loading....</h1>
