@@ -18,10 +18,10 @@ export const getProducts= (catId) => {
         }
 
 export const getDetail= (prodId) =>{
-        getDoc(doc(db,'products', prodId)).then(response => {
+        return getDoc(doc(db,'products', prodId)).then(response => {
             const values = response.data()
             const product = {id : response.id, ...values}
-            return product
+            return product;
         }).catch(error => {
             return error
             })

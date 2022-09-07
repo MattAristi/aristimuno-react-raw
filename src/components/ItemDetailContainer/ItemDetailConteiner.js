@@ -13,6 +13,7 @@ const ItemDetailContainer =({addItem}) => {
     const [loading, setLoading]= useState(true)
     const {prodId} = useParams()
     useEffect(() => {
+        setLoading(true)
         getDetail(prodId).then(product => {
             setProduct(product)
         }).catch(error => {

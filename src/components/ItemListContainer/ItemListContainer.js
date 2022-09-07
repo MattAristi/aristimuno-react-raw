@@ -15,7 +15,7 @@ const ItemListContainer =({greeting}) => {
     useEffect(() => {
             setLoading(true)
 
-            getProducts (catId).then(products => {
+            getProducts(catId).then(products => {
                 setProducts(products)
             }).catch(error => {
                 console.log(error)

@@ -1,17 +1,18 @@
 import '../Checkout/Checkout.css';
-import { Link } from 'react-router-dom';
-import { useContext, useState } from 'react'
-import { CartContext } from '../../Context/CartContext'
-import { addDoc, collection, Timestamp, getDocs, query, where, documentId, writeBatch } from 'firebase/firestore';
-import { db } from '../../Services/firebase/index';
 
+import { Timestamp, addDoc, collection, documentId, getDocs, query, where, writeBatch } from 'firebase/firestore';
+import { useContext, useState } from 'react'
+
+import { CartContext } from '../../Context/CartContext'
+import { Link } from 'react-router-dom';
+import { db } from '../../Services/firebase/index';
 
 const Checkout = () => {
     const [name, setName]= useState('')
     const [phone, setPhone]= useState('')
     const [email, setEmail]= useState('')
     const {cart, getTotal, clearCart} = useContext(CartContext)
-   
+    
     const total = getTotal()
     const createOrder = async() => {
         try {
@@ -25,6 +26,7 @@ const Checkout = () => {
             total: total,
             date: Timestamp.fromDate(new Date())
         }
+        
 
         const ids = cart.map(prod => prod.id)
         const productsRef= collection(db, 'products')
