@@ -1,6 +1,6 @@
 import {collection, doc, getDoc, getDocs, query, where} from 'firebase/firestore'
 
-import{db} from '../../Services/firebase/index'
+import{db} from '.'
 
 export const getProducts= (catId) => {
             const collectionRef = !catId 

@@ -21,15 +21,7 @@ const ItemDetailContainer =({addItem}) => {
         }).finally(() => {
             setLoading(false)
         })
-        // getDoc(doc(db,'products', prodId)).then(response => {
-        //     const values = response.data()
-        //     const product = {id : response.id, ...values}
-        //     setProduct(product)
-        // }).catch(error => {
-        //     console.error(error)
-        //     }).finally (()=>{
-        //         setLoading(false)
-        //     })
+        
     }, [prodId])
     if (loading) {
         return <h1>Loading....</h1>
