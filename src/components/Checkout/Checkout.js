@@ -1,6 +1,6 @@
 import '../Checkout/Checkout.css';
 
-import { Timestamp, addDoc, collection, documentId, getDocs, query, where, writeBatch } from 'firebase/firestore';
+import {Timestamp, addDoc, collection, documentId, getDocs, query, where, writeBatch} from 'firebase/firestore';
 import { useContext, useState } from 'react'
 
 import { CartContext } from '../../Context/CartContext'
@@ -11,7 +11,8 @@ const Checkout = () => {
     const [name, setName]= useState('')
     const [phone, setPhone]= useState('')
     const [email, setEmail]= useState('')
-    const {cart, getTotal, clearCart} = useContext(CartContext)
+   
+    const {cart, getTotal,clearCart} = useContext(CartContext)
     
     const total = getTotal()
     const createOrder = async() => {
@@ -27,10 +28,9 @@ const Checkout = () => {
             date: Timestamp.fromDate(new Date())
         }
         
-
+        
         const ids = cart.map(prod => prod.id)
         const productsRef= collection(db, 'products')
-        
         const productsAddsFirestore = await getDocs(query(productsRef, where(documentId(), 'in', ids)))
         
         const {docs} = productsAddsFirestore
