@@ -15,6 +15,7 @@ const Checkout = () => {
     const {cart, getTotal,clearCart} = useContext(CartContext)
     
     const total = getTotal()
+    
     const createOrder = async() => {
         try {
         const objectOrder = {

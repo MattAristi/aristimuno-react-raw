@@ -1,11 +1,9 @@
 import '../CartContainer/CartContainer.css';
+
+import Cart from '../Cart/Cart'
+import { CartContext } from '../../Context/CartContext'
 import { Link } from 'react-router-dom';
 import { useContext } from 'react'
-import { CartContext } from '../../Context/CartContext'
-import Cart from '../Cart/Cart'
-// import { addDoc, collection, Timestamp, updateDoc, doc, getDocs, query, where, documentId, writeBatch } from 'firebase/firestore';
-// import { db } from '../../Services/firebase/index';
-// import { async } from '@firebase/util';
 
 const CartContainer = () => {
     const { cart, getQuantityWidget, getTotal, clearCart} = useContext(CartContext)
@@ -38,6 +36,5 @@ const CartContainer = () => {
         </div>
     )
 };
-// onClick={() => createOrder()}
 
 export default CartContainer;

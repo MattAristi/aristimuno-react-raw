@@ -1,37 +1,29 @@
 import './ItemListContainer.css'
 
-import { useEffect, useState } from "react"
-
 import ItemList from "../ItemList/ItemList"
 import {getProducts} from '../../Services/firebase/firestore'
+import {useAsync} from '../../hooks/useAsync'
 import { useParams } from "react-router-dom"
 
 const ItemListContainer =({greeting}) => {
-    const [products, setProducts]= useState([])
-    const [loading, setLoading]= useState(true)
-    const {catId} = useParams()
-    
-    
-    useEffect(() => {
-            setLoading(true)
 
-            getProducts(catId).then(products => {
-                setProducts(products)
-            }).catch(error => {
-                console.log(error)
-            }).finally(() => {
-                setLoading(false)
-            })
-            
-    },[catId])
+    const {catId}= useParams()
+    console.log(catId);
+
+    const {loading, data ,error} = useAsync (() => getProducts(catId), [catId])
+    
     if (loading) {
         return <h1 className="loading">Loading....</h1>
     }
+    if (error) {
+        return <h1>Hubo un error</h1>
+    }
+    // if (data.lenght === 0)
     
     return (
         <section className="item-list-container">
             <h1 className="titulo">{(catId) ? (catId):(greeting)}</h1>
-            <ItemList products={products}/>
+            <ItemList products={data}/>
         </section>
     )}
 
