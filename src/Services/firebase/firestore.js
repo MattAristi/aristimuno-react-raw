@@ -1,5 +1,6 @@
 import {collection, doc, getDoc, getDocs, query, where} from 'firebase/firestore'
 
+import { createAdaptedProductFromFiresttore } from '../../components/adapter/productAdapter'
 import{db} from '.'
 
 export const getProducts= (catId) => {
@@ -8,8 +9,9 @@ export const getProducts= (catId) => {
                 : query(collection(db, 'products'), where('category', '==', catId ))
                     return getDocs(collectionRef).then(response => {
                         const products = response.docs.map(doc=> {
-                            const value = doc.data()
-                            return{id : doc.id, ...value}   
+                            return createAdaptedProductFromFiresttore(doc)
+                            // const value = doc.data()
+                            // return{id : doc.id, ...value}   
                         })
                         return products;
                     }).catch(error=> {

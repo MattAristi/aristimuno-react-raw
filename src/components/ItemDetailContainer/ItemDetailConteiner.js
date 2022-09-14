@@ -1,34 +1,27 @@
 import './ItemDetailContainer.css'
 
-import { useEffect, useState } from "react"
-
 import ItemDetail from '../ItemDetail/ItemDetail'
+import { fetcher } from '../utils/Fetcher'
 import {getDetail} from '../../Services/firebase/firestore'
+import {useAsync} from '../../hooks/useAsync'
 import { useParams } from 'react-router-dom'
 
 const ItemDetailContainer =({addItem}) => {
-    const [product, setProduct]= useState([])
-    const [loading, setLoading]= useState(true)
     const {prodId} = useParams()
-    useEffect(() => {
-        setLoading(true)
-        getDetail(prodId).then(product => {
-            setProduct(product)
-        }).catch(error => {
-            console.log(error)
-        }).finally(() => {
-            setLoading(false)
-        })
-        
-    }, [prodId])
+
+    const {loading, data ,error} = useAsync (() => fetcher(getDetail, prodId), [prodId])
+
     if (loading) {
         return <h1>Loading....</h1>
+    }
+    if (error) {
+        return <h1>Hubo un error</h1>
     }
     
     return (
         <section className='section-detail'>
             <h1>Detail</h1>
-            <ItemDetail product={product} addItem={addItem}/>
+            <ItemDetail product={data} addItem={addItem}/>
         </section>
     )}
 
