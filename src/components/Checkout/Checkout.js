@@ -5,16 +5,20 @@ import { useContext, useState } from 'react'
 
 import { CartContext } from '../../Context/CartContext'
 import { Link } from 'react-router-dom';
+import {NotificationContext} from '../compontentsExported'
 import { db } from '../../Services/firebase/index';
 
 const Checkout = () => {
     const [name, setName]= useState('')
     const [phone, setPhone]= useState('')
     const [email, setEmail]= useState('')
-   
-    const {cart, getTotal,clearCart} = useContext(CartContext)
-    
+    const {setNotification}=  useContext(NotificationContext)
+    const {cart, getTotal,clearCart, getTotalQ} = useContext(CartContext)
+    const [plural, setPlural]= useState('')
     const total = getTotal()
+    const totalQ = getTotalQ()
+    
+    
     
     const createOrder = async() => {
         try {
@@ -58,6 +62,7 @@ const Checkout = () => {
             const orderAdd = await addDoc(orderRef, objectOrder)
             batch.commit()
             console.log(orderAdd.id);
+            setNotification('succes', `Revisa tu correo para realizar el pago. Has reservado ${totalQ} producto${(total>1)? 's':''} por un total de $${total}`,6)
             clearCart()
             }
     

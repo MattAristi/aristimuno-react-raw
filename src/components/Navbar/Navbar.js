@@ -17,9 +17,9 @@ const Navbar = () => {
             </div>
             <div className='navbar'>
                 <button className="btn-filter"><Link to='/' className="btn-filter">Home</Link></button>
-                <button className="btn-filter"><Link to='/category/Cuadros' className="btn-filter">Cuadros</Link></button>
-                <button className="btn-filter"><Link to='/category/Horquillas' className="btn-filter">Horquillas</Link></button>
-                <button className="btn-filter"><Link to='/category/Portas' className="btn-filter">Potrtas</Link></button>
+                <button className="btn-filter"><Link to='/category/Cuadro' className="btn-filter">Cuadros</Link></button>
+                <button className="btn-filter"><Link to='/category/Horquilla' className="btn-filter">Horquillas</Link></button>
+                <button className="btn-filter"><Link to='/category/Porta' className="btn-filter">Potrtas</Link></button>
             </div>
             <div>
                 <button className={`${qWitget === 0 ? 'no_number' : 'btn-cart'}`}><Link className="link-cart" to='/cart'><CartWitget/>{qWitget}</Link></button>

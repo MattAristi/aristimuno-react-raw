@@ -22,7 +22,7 @@ const ItemListContainer =({greeting}) => {
     
     return (
         <section className="item-list-container">
-            <h1 className="titulo">{(catId) ? (catId):(greeting)}</h1>
+            <h1 className="titulo">{(catId) ? (`${catId}s`):(greeting)}</h1>
             <ItemList products={data}/>
         </section>
     )}
