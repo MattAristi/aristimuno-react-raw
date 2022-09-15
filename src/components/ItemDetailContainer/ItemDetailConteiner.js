@@ -1,6 +1,6 @@
 import './ItemDetailContainer.css'
 
-import ItemDetail from '../ItemDetail/ItemDetail'
+import {ItemDetail} from '../compontentsExported'
 import { fetcher } from '../utils/Fetcher'
 import {getDetail} from '../../Services/firebase/firestore'
 import {useAsync} from '../../hooks/useAsync'

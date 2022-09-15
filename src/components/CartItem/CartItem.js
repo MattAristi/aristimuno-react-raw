@@ -1,7 +1,8 @@
-import { useContext } from 'react'
+import '../CartItem/CartItem.css';
+
 import { CartContext } from '../../Context/CartContext'
 import { Link } from 'react-router-dom';
-import '../CartItem/CartItem.css';
+import { useContext } from 'react'
 
 const CartItem = ({product}) => {
 
@@ -15,6 +16,7 @@ const CartItem = ({product}) => {
             <Link to={`/detail/${product.id}`} className="text-card">
                 <h4 className="text-desc-cart">{product.category}</h4>
                 <h4 className="text-desc-cart">{product.name}</h4>
+                <h4 className="text-desc-cart">{product.color}</h4>
                 <h4 className="text-desc-cart">$ {product.price} c/u </h4>
                 <h4 className="text-desc-cart">{product.quantity} Unidades</h4>
                 <h4 className="text-desc-cart">SubTotal: $ {product.price * product.quantity}</h4>

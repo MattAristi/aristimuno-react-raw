@@ -1,5 +1,7 @@
 import './ItemList.css'
-import Item from '../Item/Item'
+
+import {Item} from '../compontentsExported'
+
 const ItemList =({products})=> {
     return <div className='card-list'>
                 {products.map (product => (

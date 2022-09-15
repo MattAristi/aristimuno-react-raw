@@ -1,4 +1,4 @@
-import CartItem from '../CartItem/CartItem'
+import {CartItem} from '../compontentsExported'
 
 const Cart = ({products}) => {
     return(

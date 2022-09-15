@@ -84,6 +84,7 @@ const Checkout = () => {
             </div>
 
             <button className="btn-order" onClick={() => createOrder()} ><Link className="link-order" to="/">Generar Orden</Link></button>
+            <button className="btn-cancel-order" onClick={() => clearCart()} ><Link className="link-order" to="/">Cancelar Orden</Link></button>
         </form>
     )
 }

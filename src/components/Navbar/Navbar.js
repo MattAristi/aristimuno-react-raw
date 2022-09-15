@@ -1,8 +1,10 @@
 import './Navbar.css'
-import CartWitget from '../CartWitget/CartWitget';
-import { Link } from 'react-router-dom'
+
 import { CartContext } from '../../Context/CartContext';
+import {CartWitget} from '../compontentsExported'
+import { Link } from 'react-router-dom'
 import { useContext } from 'react';
+
 const Navbar = () => {
     const {getQuantityWidget}= useContext(CartContext)
     const qWitget = getQuantityWidget()

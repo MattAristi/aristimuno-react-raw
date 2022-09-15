@@ -1,6 +1,6 @@
 import './ItemListContainer.css'
 
-import ItemList from "../ItemList/ItemList"
+import {ItemList} from '../compontentsExported'
 import { fetcher } from '../utils/Fetcher'
 import {getProducts} from '../../Services/firebase/firestore'
 import {useAsync} from '../../hooks/useAsync'

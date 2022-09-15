@@ -1,8 +1,10 @@
-import { useState, useContext} from 'react';
-import { Link } from 'react-router-dom';
-import ItemCount from '../ItemCount/ItemCount'
 import './ItemDetail.css'
+
+import { useContext, useState } from 'react';
+
 import { CartContext } from '../../Context/CartContext';
+import {ItemCount} from '../compontentsExported'
+import { Link } from 'react-router-dom';
 import NotificationContext from '../../Notification/Notification';
 
 const ItemDetail= ({product}) => {
